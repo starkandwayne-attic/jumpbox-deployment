@@ -1,5 +1,5 @@
 ---
-name: (( grab meta.environment ))
+name: (( param "Specify the name for this deployment" ))
 
 compilation: (( param "Specify the compilation node configurations" ))
 

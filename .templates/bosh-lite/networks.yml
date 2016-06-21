@@ -3,10 +3,10 @@ networks:
 - name: jumpbox
   type: manual
   subnets:
-  - range: 10.244.18.0/24
-    gateway: 10.244.18.1
+  - range: 10.244.38.0/24
+    gateway: 10.244.38.1
     static:
-    - 10.244.18.2 - 10.244.18.60
+    - 10.244.38.2 - 10.244.38.60
 
 jobs:
 - name: jumpbox

@@ -1,5 +1,5 @@
 ---
 properties:
   jumpbox:
-    hostname: (( concat meta.name "-jumpbox" ))
+    hostname: (( concat name "-jumpbox" ))
     users: (( param "Set up some users to log into this jumpbox" ))

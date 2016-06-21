@@ -1,13 +1,13 @@
 ---
 jobs:
-- name: jumpbox_z1
+- name: jumpbox
   templates:
   - name: jumpbox
     release: jumpbox
-  - name: shield-agent
-    release: shield
   - name: toolbelt-quick
     release: toolbelt
+  - name: shield-agent
+    release: shield
   - name: toolbelt
     release: toolbelt
   instances: 1
