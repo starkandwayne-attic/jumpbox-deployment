@@ -1,0 +1,19 @@
+---
+name: (( grab meta.environment ))
+
+compilation: (( param "Specify the compilation node configurations" ))
+
+director_uuid: (( param "Specify the uuid of your bosh director" ))
+
+disk_pools: (( param "Specify the disk pools for your deployment" ))
+
+resource_pools: (( param "Specify the resource pools for your deployment" ))
+
+networks: (( param "Specify the networks for your deployment" ))
+
+update:
+  canaries: 1
+  max_in_flight: 4
+  canary_watch_time: 1000-60000
+  update_watch_time: 1000-60000
+  serial: false

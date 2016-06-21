@@ -1,0 +1,34 @@
+Site Definitions (bosh-lite)
+
+This directory contains templates that describe the infrastructure-specific
+settings and site-wide properties.  The templates are merged in the following order:
+
+  site/disk-pools.yml         If you need to, you can put disk pool
+                              definitions in this file.
+
+  site/update.yml             Specify job update parameters here, which can
+                              change based on the cloud provider in use,
+                              and its performance characteristics.
+
+  site/jobs.yml               Here you can modify the list of jobs defined
+                              at the global level, remove jobs (by setting
+                              their instances: count to 0), and supply any
+                              additional, site-wide job properties.
+
+  site/networks.yml           Define what networks to use for all the
+                              environments in this site (although you may
+                              want to defer the actual numbering to the
+                              environment level.
+
+  site/resource-pools.yml     Set up the resource pools to use for job
+                              virtual machines, and apply their cloud
+                              properties (i.e. availability zones)
+
+  site/properties.yml         Define properties (both globally and per-job),
+                              that are specific to this environment.  These will
+                              most likely override global properties.
+
+
+NOTE: If you make changes to the templates in here, they will automatically
+propagate to any newly-created environments, but you will need to run a
+refresh for existing environments to receive those updates.

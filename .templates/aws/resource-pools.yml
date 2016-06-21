@@ -1,0 +1,22 @@
+---
+meta:
+  availability_zone: (( param "What availability zone should your jumpbox VMs be in?" ))
+resource_pools:
+  - name: jumpbox
+    network: jumpbox
+    stemcell: (( grab meta.stemcell ))
+    cloud_properties:
+      instance_type: m3.medium
+      availability_zone: (( grab meta.availability_zone ))
+
+compilation:
+  workers: 3
+  network: jumpbox
+  reuse_compilation_vms: true
+  cloud_properties:
+    instance_type: c4.large
+    availability_zone: (( grab meta.availability_zone ))
+
+jobs:
+  - name: jumpbox
+    resource_pool: jumpbox

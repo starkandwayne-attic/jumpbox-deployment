@@ -1,0 +1,15 @@
+---
+resource_pools:
+- name: jumpbox
+  network: jumpbox
+  cloud_properties: {}
+  stemcell: (( grab meta.stemcell ))
+
+compilation:
+  workers: 2
+  network: jumpbox
+  cloud_properties: {}
+
+jobs:
+- name: jumpbox
+  resource_pool: jumpbox
