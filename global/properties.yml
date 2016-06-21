@@ -3,3 +3,6 @@ properties:
   jumpbox:
     hostname: (( concat name "-jumpbox" ))
     users: (( param "Set up some users to log into this jumpbox" ))
+  shield:
+    agent:
+      autoprovision: (( param "What is the URL to this jumpbox's shield installation?" ))
