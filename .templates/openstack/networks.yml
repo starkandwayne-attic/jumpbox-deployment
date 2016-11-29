@@ -1,0 +1,11 @@
+---
+networks:
+- name: jumpbox
+  type: manual
+  subnets: (( param "Specify your jumpbox subnet" ))
+
+jobs:
+- name: jumpbox
+  networks:
+  - name: jumpbox
+    static_ips: (( static_ips 0 ))
