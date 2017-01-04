@@ -1,0 +1,22 @@
+---
+resource_pools:
+- name: jumpbox
+  network: jumpbox
+  stemcell: (( grab meta.stemcell ))
+  cloud_properties:
+    cpu: 2
+    ram: 2_048
+    disk: 4_096
+
+compilation:
+  network: jumpbox
+  reuse_compilation_vms: true
+  workers: 3
+  cloud_properties:
+    cpu: 2
+    ram: 4_096
+    disk: 8_096
+
+jobs:
+  - name: jumpbox
+    resource_pool: jumpbox
