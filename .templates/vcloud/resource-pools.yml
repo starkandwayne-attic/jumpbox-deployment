@@ -7,6 +7,8 @@ resource_pools:
     cpu: 2
     ram: 2_048
     disk: 4_096
+  env:
+    vapp: (( grab meta.type ))
 
 compilation:
   network: jumpbox
@@ -16,6 +18,8 @@ compilation:
     cpu: 2
     ram: 4_096
     disk: 8_096
+  env:
+    vapp: (( grab meta.type ))
 
 jobs:
   - name: jumpbox
