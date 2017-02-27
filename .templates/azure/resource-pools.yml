@@ -1,0 +1,25 @@
+---
+meta:
+  azure:
+    availability_set: (( param "Set the availability set for your Jumpbox VM" ))
+    storage_accounts:
+      names:
+      - (( param "Set the storage account name for zone1 VMs" ))
+      type: Standard_LRS
+
+resource_pools:
+  - name: jumpbox
+    network: jumpbox
+    stemcell: (( grab meta.stemcell ))
+    cloud_properties:
+      instance_type: Standard_D1_v2
+      availability_set: (( grab meta.azure.availability_set ))
+      storage_account_name: (( grab meta.azure.storage_accounts.names.0 ))
+      storage_account_type: (( grab meta.azure.storage_accounts.type ))
+
+compilation:
+  network: jumpbox
+  workers: 1
+  reuse_compilation_vms: true
+  cloud_properties:
+    instance_type: Standard_A2_v2

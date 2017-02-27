@@ -1,0 +1,12 @@
+---
+networks:
+  - name: jumpbox
+    subnets:
+      - range:   (( param "Don't forget to define a network range in networking.yml" ))
+        gateway: (( param "Don't forget to define a gateway in networking.yml" ))
+        dns:     (( param "Don't forget to provide a list of DNS name servers in networking.yml" ))
+        static:  (( param "Don't forget to define the range(s) of static IPs in networking.yml" ))
+        cloud_properties:
+          subnet_name: (( param "Don't forget to specify the Azure subnet name in networking.yml" ))
+          virtual_network_name: (( param "Don't forget to specify the Azure virtual network in networking.yml" ))
+
